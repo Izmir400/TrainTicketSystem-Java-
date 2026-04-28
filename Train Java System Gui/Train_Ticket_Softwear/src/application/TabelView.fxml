@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.SearchResultsController"
+            style="-fx-background-color: #0f2027;">
+
+    <top>
+        <Label text="Available Trains"
+               style="-fx-text-fill: #00ffff; -fx-font-size: 22; -fx-padding: 15;"/>
+    </top>
+
+    <center>
+        <TableView fx:id="tableView" prefHeight="400" prefWidth="800">
+            <columns>
+                <TableColumn fx:id="trainCol" text="Train"/>
+                <TableColumn fx:id="fromCol" text="From"/>
+                <TableColumn fx:id="toCol" text="To"/>
+                <TableColumn fx:id="departureCol" text="Departure"/>
+                <TableColumn fx:id="arrivalCol" text="Arrival"/>
+                <TableColumn fx:id="seatsCol" text="Seats"/>
+                <TableColumn fx:id="priceCol" text="Price (€)"/>
+                <TableColumn fx:id="actionCol" text="Action"/>
+            </columns>
+
+            <placeholder>
+                <Label text="No trains available"
+                       style="-fx-text-fill: #00ffff;"/>
+            </placeholder>
+        </TableView>
+    </center>
+
+</BorderPane>

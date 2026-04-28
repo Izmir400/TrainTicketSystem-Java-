@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane style="-fx-background-color: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.OffersController">
+
+    <!-- Top Bar -->
+    <top>
+        <HBox style="-fx-padding: 15; -fx-background-color: rgba(0,0,0,0.3);">
+            <Label style="-fx-text-fill: #00ffff; -fx-font-size: 24; -fx-font-weight: bold;"
+                   text="💲 Special Offers" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="backButton" onAction="#onBackToDashboard"
+                    style="-fx-background-color: #00ffff; -fx-text-fill: #0f2027; -fx-font-weight: bold;"
+                    text="← Back to Dashboard" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="25" style="-fx-padding: 40;" alignment="CENTER">
+            <Label style="-fx-text-fill: #00ffcc; -fx-font-size: 28; -fx-font-weight: bold;"
+                   text="Current Promotions" />
+
+            <VBox spacing="20" style="-fx-background-color: rgba(255,255,255,0.08); 
+                                     -fx-padding: 25; 
+                                     -fx-background-radius: 15;">
+                <Label style="-fx-text-fill: white; -fx-font-size: 20;"
+                       text="🌟 20% OFF on all Tirana ↔ Vlora trips this week!" />
+                <Label style="-fx-text-fill: #ffd700;"
+                       text="Use code: SUMMER20" />
+            </VBox>
+
+            <VBox spacing="20" style="-fx-background-color: rgba(255,255,255,0.08); 
+                                     -fx-padding: 25; 
+                                     -fx-background-radius: 15;">
+                <Label style="-fx-text-fill: white; -fx-font-size: 20;"
+                       text="🚄 Early Bird Discount - Book 7 days in advance and save 15%" />
+            </VBox>
+
+            <Button style="-fx-background-color: #00ffcc; 
+                           -fx-text-fill: #0f2027; 
+                           -fx-font-size: 16; 
+                           -fx-padding: 12 30;"
+                    text="Browse All Offers" />
+        </VBox>
+    </center>
+</BorderPane>

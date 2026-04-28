@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="application.PaymentController"
+      spacing="15" 
+      alignment="CENTER"
+      prefWidth="500" 
+      prefHeight="550">
+
+    <padding>
+        <Insets top="30" right="40" bottom="30" left="40"/>
+    </padding>
+
+    <Label text="Payment Details" 
+           style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <Separator/>
+
+    <!-- Card Number -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Card Number:" prefWidth="120"/>
+        <TextField fx:id="cardNumberField" 
+                   promptText="1234 5678 9012 3456" 
+                   prefWidth="300" 
+                   maxWidth="300"/>
+    </HBox>
+
+    <!-- Expiry and CVV -->
+    <HBox spacing="20" alignment="CENTER_LEFT">
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Expiry Date:" prefWidth="120"/>
+            <TextField fx:id="expiryField" 
+                       promptText="MM/YY" 
+                       prefWidth="100" 
+                       maxWidth="100"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="CVV:" prefWidth="50"/>
+            <TextField fx:id="cvvField" 
+                       promptText="123" 
+                       prefWidth="80" 
+                       maxWidth="80"/>
+        </HBox>
+    </HBox>
+
+    <!-- Cardholder Name -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Cardholder Name:" prefWidth="120"/>
+        <TextField fx:id="nameField" 
+                   promptText="John Doe" 
+                   prefWidth="300" 
+                   maxWidth="300"/>
+    </HBox>
+
+    <Separator/>
+
+    <!-- Buttons -->
+    <HBox spacing="15" alignment="CENTER">
+        <Button fx:id="payButton" 
+                text="Pay Now" 
+                style="-fx-font-size: 16px; -fx-padding: 10 30;"
+                onAction="#onPayClick"
+                disable="true"/>
+
+        <Button fx:id="printBillButton" 
+                text="Print Bill" 
+                style="-fx-font-size: 16px; -fx-padding: 10 30;"
+                onAction="#onPrintBillClick"/>
+    </HBox>
+
+    <Label text="🔒 Secure Payment" 
+           style="-fx-text-fill: green; -fx-font-size: 12px;"/>
+
+</VBox>

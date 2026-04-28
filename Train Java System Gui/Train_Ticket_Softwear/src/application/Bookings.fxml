@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane style="-fx-background-color: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);" 
+            xmlns="http://javafx.com/javafx/25" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.BookingsController">
+
+    <!-- Top Bar -->
+    <top>
+        <HBox style="-fx-padding: 15; -fx-background-color: rgba(0,0,0,0.3);">
+            <Label style="-fx-text-fill: #00ffff; -fx-font-size: 24; -fx-font-weight: bold;" 
+                   text="🎫 My Bookings" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="backButton" onAction="#onBackToDashboard" 
+                    style="-fx-background-color: #00ffff; -fx-text-fill: #0f2027; -fx-font-weight: bold;" 
+                    text="← Back to Dashboard" />
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="20" style="-fx-padding: 30;">
+            <Label style="-fx-text-fill: white; -fx-font-size: 18;" 
+                   text="Your Reservations" />
+
+            <TableView fx:id="bookingsTable" style="-fx-background-color: transparent;">
+                <columns>
+                    <TableColumn fx:id="bookingIdCol" prefWidth="100" text="Booking ID" />
+                    <TableColumn fx:id="trainNameCol" prefWidth="180" text="Train" />
+                    <TableColumn fx:id="routeCol" prefWidth="220" text="Route" />
+                    <TableColumn fx:id="dateCol" prefWidth="180" text="Date &amp; Time" />
+                    <TableColumn fx:id="seatsCol" prefWidth="80" text="Seats" />
+                    <TableColumn fx:id="statusCol" prefWidth="100" text="Status" />
+                </columns>
+            </TableView>
+
+            <HBox alignment="CENTER" spacing="15">
+                <Button fx:id="cancelBookingButton" onAction="#onCancelBooking" 
+                        style="-fx-background-color: #ff6666; -fx-text-fill: white; -fx-padding: 10 20;" 
+                        text="Cancel Selected Booking" />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

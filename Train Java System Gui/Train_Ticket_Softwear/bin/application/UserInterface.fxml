@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane style="-fx-background-color: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);" 
+            xmlns="http://javafx.com/javafx/25" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="application.GuestDashboardController">
+
+    <left>
+        <VBox prefWidth="180" spacing="20" style="-fx-background-color: rgba(255,255,255,0.05); -fx-padding: 20;">
+            <Label style="-fx-text-fill: #00ffff; -fx-font-size: 18; -fx-font-weight: bold;" text="Guest Dashboard" />
+            <Button fx:id="homeButton" onAction="#onHomeClick" style="-fx-background-color: transparent; -fx-text-fill: white;" text="🏠 Home" />
+            <Button fx:id="searchTrainsButton" onAction="#onSearchTrainsClick" style="-fx-background-color: transparent; -fx-text-fill: white;" text="🚆 Search Trains" />
+            <Button fx:id="bookingsButton" onAction="#onBookingsClick" style="-fx-background-color: transparent; -fx-text-fill: white;" text="🎫 My Bookings" />
+            <Button fx:id="offersButton" onAction="#onOffersClick" style="-fx-background-color: transparent; -fx-text-fill: white;" text="💲 Offers" />
+            <Button fx:id="supportButton" onAction="#onSupportClick" style="-fx-background-color: transparent; -fx-text-fill: white;" text="🎧 Support" />
+            <Button fx:id="logoutButton" onAction="#onLogoutClick" style="-fx-background-color: transparent; -fx-text-fill: #ff6666;" text="⏻ Logout" />
+        </VBox>
+    </left>
+
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="25" style="-fx-padding: 30;">
+            <Label style="-fx-text-fill: #00ffff; -fx-font-size: 26; -fx-font-weight: bold;" text="Welcome, Guest!" />
+            <Label style="-fx-text-fill: white; -fx-font-size: 16;" text="Explore and Book Your Train Tickets!" />
+
+            <HBox alignment="CENTER" spacing="10">
+                <TextField fx:id="fromField" promptText="From" style="-fx-background-color: transparent; -fx-border-color: #00ffff; -fx-text-fill: white;" />
+                <TextField fx:id="toField" promptText="To" style="-fx-background-color: transparent; -fx-border-color: #00ffff; -fx-text-fill: white;" />
+                <DatePicker fx:id="datePicker" promptText="Select Date" />
+                <Button fx:id="searchButton" onAction="#onSearchClick" style="-fx-background-color: #00ffff; -fx-text-fill: #0f2027; -fx-font-weight: bold;" text="Search" />
+            </HBox>
+
+            <!-- Train Results Table -->
+            <TableView fx:id="trainTable" prefHeight="400" prefWidth="800">
+                <columns>
+                    <TableColumn fx:id="trainNameCol" text="Train" />
+                    <TableColumn fx:id="departureCol" text="Departure Station" />
+                    <TableColumn fx:id="arrivalCol" text="Arrival Station" />
+                    <TableColumn fx:id="departureTimeCol" text="Departure Time" />
+                    <TableColumn fx:id="arrivalTimeCol" text="Arrival Time" />
+                    <TableColumn fx:id="seatsCol" text="Seats" />
+                </columns>
+                <placeholder>
+                    <Label style="-fx-text-fill: #00ffff;" text="No trains available" />
+                </placeholder>
+            </TableView>
+
+            <!-- Action Buttons -->
+            <HBox alignment="CENTER" spacing="20">
+                <Button fx:id="trainScheduleButton" onAction="#onTrainScheduleClick" style="-fx-background-color: #00aaff; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 15 25;" text="🚆 Train Schedule" />
+                <Button fx:id="bookTicketsButton" onAction="#onBookTicketsClick" style="-fx-background-color: #00ffcc; -fx-text-fill: #0f2027; -fx-background-radius: 10; -fx-padding: 15 25;" text="🎫 Book Tickets" />
+                <Button fx:id="travelGuidesButton" onAction="#onTravelGuidesClick" style="-fx-background-color: #ffaa00; -fx-text-fill: #0f2027; -fx-background-radius: 10; -fx-padding: 15 25;" text="🗺️ Travel Guides" />
+                <!-- New Admin Login Button -->
+                <Button fx:id="adminLoginButton" onAction="#onAdminLoginClick" style="-fx-background-color: #ff3333; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 15 25;" text="👨‍💼 Admin Login" />
+            </HBox>
+
+            <!-- Payment and PDF -->
+            <HBox alignment="CENTER" spacing="20">
+                <Button fx:id="paymentButton" onAction="#onPaymentClick" style="-fx-background-color: #33cc33; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 15 25;" text="💳 Payment" />
+                <Button fx:id="pdfBillButton" onAction="#onPdfBillClick" style="-fx-background-color: #ff9933; -fx-text-fill: #0f2027; -fx-background-radius: 10; -fx-padding: 15 25;" text="📄 Download PDF Bill" />
+            </HBox>
+
+            <Label style="-fx-text-fill: #00ffff; -fx-font-size: 20; -fx-font-weight: bold;" text="Popular Destinations" />
+            <HBox alignment="CENTER" spacing="15">
+                <Button style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white;" text="Shkoder" />
+                <Button style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white;" text="Tirana" />
+                <Button style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white;" text="Durres" />
+                <Button style="-fx-background-color: rgba(255,255,255,0.1); -fx-text-fill: white;" text="Vlora" />
+            </HBox>
+            <VBox spacing="10">
+                <Label style="-fx-text-fill: white;" text="⚠️ Safety Guidelines for Train Travel — Important safety tips for your journey." />
+                <Label style="-fx-text-fill: white;" text="🛤️ New Routes Added! — Exciting new routes available for booking!" />
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

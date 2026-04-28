@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.AdminController"
+            style="-fx-background-color: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);">
+
+    <!-- TOP -->
+    <top>
+        <HBox spacing="10"
+              style="-fx-padding:15; -fx-background-color: rgba(0,0,0,0.35);">
+            <Label text="🔧 Admin Panel - Train Management"
+                   style="-fx-text-fill:#00ffff; -fx-font-size:26; -fx-font-weight:bold;" />
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button fx:id="backButton"
+                    text="← Back"
+                    onAction="#onBackToDashboard"
+                    style="-fx-background-color:#00ffff; -fx-text-fill:black; -fx-font-weight:bold;"/>
+        </HBox>
+    </top>
+
+    <!-- LEFT SIDE FORM -->
+    <left>
+        <VBox spacing="12"
+              style="-fx-padding:20; -fx-pref-width:340;">
+
+            <Label text="Add / Update Train"
+                   style="-fx-text-fill:#00ffcc; -fx-font-size:18; -fx-font-weight:bold;" />
+
+            <TextField fx:id="trainNameField" promptText="Train Name"/>
+            <TextField fx:id="departureStationField" promptText="Departure Station"/>
+            <TextField fx:id="arrivalStationField" promptText="Arrival Station"/>
+
+            <DatePicker fx:id="departureDatePicker"/>
+
+            <HBox spacing="10">
+                <TextField fx:id="departureTimeField"
+                           promptText="Departure HH:mm"
+                           prefWidth="150"/>
+                <TextField fx:id="arrivalTimeField"
+                           promptText="Arrival HH:mm"
+                           prefWidth="150"/>
+            </HBox>
+
+            <TextField fx:id="seatsField" promptText="Available Seats"/>
+            <TextField fx:id="priceField" promptText="Ticket Price"/>
+
+            <HBox spacing="10">
+                <Button fx:id="addButton"
+                        text="Add"
+                        onAction="#onAddTrain"
+                        style="-fx-background-color:#00ff88; -fx-text-fill:black; -fx-pref-width:95;"/>
+
+                <Button fx:id="updateButton"
+                        text="Update"
+                        onAction="#onUpdateTrain"
+                        style="-fx-background-color:#ffaa00; -fx-text-fill:black; -fx-pref-width:95;"/>
+
+                <Button fx:id="deleteButton"
+                        text="Delete"
+                        onAction="#onDeleteTrain"
+                        style="-fx-background-color:#ff4444; -fx-text-fill:white; -fx-pref-width:95;"/>
+            </HBox>
+
+            <Button fx:id="clearButton"
+                    text="Clear Fields"
+                    onAction="#onClearFields"
+                    style="-fx-background-color:transparent; -fx-text-fill:white;"/>
+        </VBox>
+    </left>
+
+    <!-- CENTER TABLE -->
+    <center>
+        <VBox spacing="15" style="-fx-padding:20;">
+
+            <Label text="Train Schedule"
+                   style="-fx-text-fill:white; -fx-font-size:20; -fx-font-weight:bold;"/>
+
+            <TableView fx:id="trainTable" prefHeight="600">
+
+                <columns>
+                    <TableColumn fx:id="trainIdCol" text="ID" prefWidth="60"/>
+                    <TableColumn fx:id="trainNameCol" text="Train Name" prefWidth="150"/>
+                    <TableColumn fx:id="departureCol" text="From" prefWidth="120"/>
+                    <TableColumn fx:id="arrivalCol" text="To" prefWidth="120"/>
+                    <TableColumn fx:id="departureTimeCol" text="Departure" prefWidth="160"/>
+                    <TableColumn fx:id="arrivalTimeCol" text="Arrival" prefWidth="160"/>
+                    <TableColumn fx:id="seatsCol" text="Seats" prefWidth="80"/>
+                    <TableColumn fx:id="priceCol" text="Price" prefWidth="90"/>
+                </columns>
+
+            </TableView>
+        </VBox>
+    </center>
+
+</BorderPane>

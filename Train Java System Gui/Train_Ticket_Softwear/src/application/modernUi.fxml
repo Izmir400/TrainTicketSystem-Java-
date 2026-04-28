@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.DatePicker?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="application.GuestDashboardController">
+
+    <!-- Quick Search -->
+    <top>
+        <HBox spacing="10" style="-fx-padding: 15; -fx-background-color: #ecf0f1;">
+            <TextField fx:id="fromField" promptText="From Station" />
+            <TextField fx:id="toField" promptText="To Station" />
+            <DatePicker fx:id="datePicker" />
+            <Button fx:id="searchButton" onAction="#onSearchClick" text="Search">
+                <graphic>
+                    <ImageView fitWidth="18" fitHeight="18">
+                        <Image url="@icons/search.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </HBox>
+    </top>
+
+    <!-- Train Table -->
+    <center>
+        <TableView fx:id="trainTable">
+            <columns>
+                <TableColumn fx:id="trainNameCol" text="Train Name" prefWidth="120"/>
+                <TableColumn fx:id="departureCol" text="Departure" prefWidth="120"/>
+                <TableColumn fx:id="arrivalCol" text="Arrival" prefWidth="120"/>
+                <TableColumn fx:id="departureTimeCol" text="Departure Time" prefWidth="150"/>
+                <TableColumn fx:id="arrivalTimeCol" text="Arrival Time" prefWidth="150"/>
+                <TableColumn fx:id="seatsCol" text="Seats" prefWidth="80"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <!-- Sidebar -->
+    <left>
+        <VBox spacing="15" style="-fx-padding: 20; -fx-background-color: #2c3e50;">
+            <Button fx:id="homeButton" text="Home" onAction="#onHomeClick">
+                <graphic><ImageView fitWidth="20" fitHeight="20"><Image url="@icons/home.png"/></ImageView></graphic>
+            </Button>
+            <Button fx:id="searchTrainsButton" text="Search Trains" onAction="#onSearchTrainsClick">
+                <graphic><ImageView fitWidth="20" fitHeight="20"><Image url="@icons/train.png"/></ImageView></graphic>
+            </Button>
+            <Button fx:id="bookingsButton" text="Bookings" onAction="#onBookingsClick">
+                <graphic><ImageView fitWidth="20" fitHeight="20"><Image url="@icons/ticket.png"/></ImageView></graphic>
+            </Button>
+            <Button fx:id="offersButton" text="Offers" onAction="#onOffersClick">
+                <graphic><ImageView fitWidth="20" fitHeight="20"><Image url="@icons/offer.png"/></ImageView></graphic>
+            </Button>
+            <Button fx:id="supportButton" text="Support" onAction="#onSupportClick">
+                <graphic><ImageView fitWidth="20" fitHeight="20"><Image url="@icons/support.png"/></ImageView></graphic>
+            </Button>
+            <Button fx:id="logoutButton" text="Logout" onAction="#onLogoutClick">
+                <graphic><ImageView fitWidth="20" fitHeight="20"><Image url="@icons/logout.png"/></ImageView></graphic>
+            </Button>
+        </VBox>
+    </left>
+</BorderPane>
